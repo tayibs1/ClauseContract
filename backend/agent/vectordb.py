@@ -1,3 +1,4 @@
+from os.path import isfile
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
@@ -71,7 +72,6 @@ if __name__ == "__main__":
 ]
     import os
     for i in l:
-        
-        file_path = f"/Users/attaimen/gitrepos/ClauseContract/backend/agent/output/{i}"
+        file_path = f"./output/{i}"
         destination = f"./chroma_db/{i}"
         db = process_document(file_path,destination)

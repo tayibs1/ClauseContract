@@ -20,6 +20,7 @@ class BaseState(TypedDict):
     initialse_analysis: str
     initialse: str
     response:lawresponse
+
 class AnalyserAgent:
     def __init__(self):
         logger.info("Initializing Agent")

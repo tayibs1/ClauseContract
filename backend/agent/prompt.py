@@ -38,7 +38,7 @@ Return your findings as a structured summary:
 - **Explanation:** A detailed explanation of why you reached that verdict, citing relevant legal provisions or principles.
 
 inforatiom needed: {initilise_analyse}
-ralted law : {law}
+related law : {law}
 Use this prompt to ensure your analysis is thorough, precise, and legally sound.
 """)
 
