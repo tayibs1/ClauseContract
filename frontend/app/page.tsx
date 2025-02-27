@@ -84,7 +84,7 @@ export default function Page() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="flex flex-col items-center justify-center gap-4 md:flex-row"
               >
-                <Link href="/analyze">
+                <Link href="/analysis">
                   <Button
                     size="lg"
                     className="h-12 px-6 transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25 backdrop-blur-sm"
