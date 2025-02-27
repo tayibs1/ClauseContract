@@ -41,3 +41,58 @@ inforatiom needed: {initilise_analyse}
 ralted law : {law}
 Use this prompt to ensure your analysis is thorough, precise, and legally sound.
 """)
+
+
+
+
+first_analyse_prompt   =ChatPromptTemplate.from_template("""You are an expert legal document classifier. Analyze the provided document and classify it into one of these specific categories:
+- Affiliate_Agreements
+- Agency Agreements
+- Co_Branding
+- Collaboration
+- Consulting_Agreements
+- Development
+- Distributor
+- Endorsement Agreement
+- Endorsement
+- Franchise
+- Hosting
+- IP
+- Joint Venture_Filing
+- Joint Venture
+- License_Agreements
+- Maintenance
+- Manufacturing
+- Marketing
+- Non_Compete_Non_Solicit
+- Outsourcing
+- Promotion
+- Reseller
+- Service
+- Sponsorship
+- Strategic Alliance
+- Supply
+- Transportation
+
+Document for classification:
+{summary}
+
+""")
+
+
+
+summary_prompt=ChatPromptTemplate.from_template("""
+You are an AI legal analyst. Your task is to extract the **most important and relevant information** from a given legal document.  
+
+### **Instructions:**  
+- Identify and summarize the **key clauses, obligations, and rights** of all involved parties.  
+- Extract **critical dates**, such as agreement start and end dates, renewal terms, deadlines, and penalties.  
+- Highlight **financial terms**, including payment obligations, fees, commissions, penalties, or damages.  
+- Identify **governing law and jurisdiction** to determine which laws apply.  
+- Extract any **termination conditions**, including breach scenarios and dispute resolution methods.  
+- Identify and summarize any **confidentiality, non-compete, or intellectual property** clauses.  
+- If applicable, highlight **liability limitations, indemnification clauses, and warranties**.  
+- If the document contains ambiguous, complex, or missing information, indicate this explicitly.  
+- Provide the extracted information in **clear and structured JSON format** as follows:  
+THE document: {initialse}
+""")
