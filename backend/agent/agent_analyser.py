@@ -9,8 +9,6 @@ import asyncio
 
 logger = logging.getLogger(__name__)
 
-
-
 class lawresponse(BaseModel):
     Reasonable: bool = Field(description="Reasonable means true OR NOT Reasonable means false")
     Reason: str = Field(description = "The reason behined the previous")
@@ -20,6 +18,7 @@ class BaseState(TypedDict):
     initialse_analysis: str
     initialse: str
     response:lawresponse
+    
 class AnalyserAgent:
     def __init__(self):
         logger.info("Initializing Agent")

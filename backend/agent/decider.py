@@ -48,7 +48,7 @@ class BaseState(TypedDict):
     initialse: str
     summary: str
 
-class AnalyserAgent:
+class SummaryAgent:
     def __init__(self):
         logger.info("Initializing Agent")
         self.llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.1)
@@ -109,10 +109,10 @@ class AnalyserAgent:
         }
     
 
-    
+
 async def test_document_classification():
     # Test document
-    test_document = """
+    test_document ="""
     AFFILIATE AGREEMENT
     
     This Affiliate Agreement ("Agreement") is entered into as of [DATE] between [COMPANY NAME] ("Company") and [AFFILIATE NAME] ("Affiliate").
@@ -121,8 +121,8 @@ async def test_document_classification():
     Company hereby appoints Affiliate as a non-exclusive marketing affiliate to promote Company's products or services.
     
     2. COMMISSION
-    Affiliate shall receive commission for qualified sales as defined in Schedule A.
-    """
+    Affiliate shall receive commission for qåualified sales as defined in Schedule A.
+"""
     
     # Initialize state
 # Update initial state
@@ -132,7 +132,7 @@ async def test_document_classification():
         "category": DocumentCategory(category=CategoryEnum.AFFILIATE_AGREEMENTS)
     }
     # Create and run agent
-    agent = AnalyserAgent()
+    agent = SummaryAgent()
     try:
 
         summary_r = await agent.summary(initial_state)
